@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+class Metro {
+  
+  public static int countPassengers(ArrayList<int[]> stops){ 
+    int passangers=0;
+     for (int i = 0; i < stops.size(); i++){         
+            int stop[]=stops.get(i);
+            for (int j=0; j<stop.length; j++){
+              if(j==0){
+                passangers+=stop[j];
+              }
+              else{
+                passangers-=stop[j];
+              }
+            }
+       }
+    if (passangers<0){
+      passangers=0;
+    }
+    return passangers;
+  }
+}

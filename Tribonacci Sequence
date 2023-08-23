@@ -1,0 +1,43 @@
+/* The explanation of the problem is herehttps://www.codewars.com/kata/556deca17c58da83c00002db 
+ * Basically is make a fibonacci sequence, but using three numbers instead of two
+ * The program recieve the three numbers and the size of arrays we have to return
+ * 
+*/
+public class Xbonacci {
+
+  public double[] tribonacci(double[] s, int n) {
+        
+        //first, we make the returne arrays with the size of the n
+      double[] tribonacci=new double[n];
+      
+      //second, we test the size of the arrays to return
+      if(n>2){
+
+      //ifis three more we have to make verision of the fibonacci but with three nmbes
+      double firstNumber=s[0];
+      double secondNumber=s[1];
+      double thirdNumber=s[2];
+      tribonacci[0]=s[0];
+      tribonacci[1]=s[1];
+      tribonacci[2]=s[2];
+      
+        for (int i = 3; i < tribonacci.length; i++) {
+            tribonacci[i]=firstNumber+secondNumber+thirdNumber;
+            firstNumber=secondNumber;
+            secondNumber=thirdNumber;
+            thirdNumber=tribonacci[i];
+        }
+      }
+      else{
+        //if the array we have to return is lower than three we simple make the new arrays with number of the original arrays
+        if(n==2){
+          tribonacci[0]=s[0];
+          tribonacci[1]=s[1];
+        }
+       if(n==1){
+         tribonacci[0]=s[0];
+       } 
+      }
+      return tribonacci;
+  }
+}

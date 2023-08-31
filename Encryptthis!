@@ -1,0 +1,22 @@
+import java.util.Arrays;
+
+public class Kata {
+    public static String encryptThis(String text) {
+        String encryptedString="";
+        String[] splited = text.split(" ");
+      
+      
+        for (int i = 0; i < splited.length; i++) {
+        char[] charrArray=splited[i].toCharArray();
+        int ascii = (int) charrArray[0];
+        encryptedString=encryptedString+ascii;  
+          
+        for (int j=charrArray.length; j>1; j--){
+            encryptedString=encryptedString+charrArray[j];            
+          }
+          
+        }
+      System.out.print(encryptedString);
+      return encryptedString;
+    }
+}
